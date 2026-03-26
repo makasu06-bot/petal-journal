@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Petal Journal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="brand">
+        <h1>Petal Journal</h1>
+        <small class="muted">soft, private, simple</small>
+      </div>
+      <div class="top-actions">
+        <button class="btn" id="btnExport">Export</button>
+        <button class="btn btn-primary" id="btnNew">New entry</button>
+      </div>
+    </header>
+
+    <div class="shell">
+      <aside class="panel panel-pad">
+        <div class="section-title">Search</div>
+        <input class="input" id="search" placeholder="Search entries…" />
+
+        <div class="divider"></div>
+
+        <div class="section-title">Tags</div>
+        <div class="chip-row" id="tagRow">
+          <button class="chip tag" data-tag="gratitude" type="button">gratitude</button>
+          <button class="chip tag" data-tag="work" type="button">work</button>
+          <button class="chip tag" data-tag="health" type="button">health</button>
+          <button class="chip tag" data-tag="family" type="button">family</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="row row-baseline">
+          <div class="section-title section-title-inline">Entries</div>
+          <small class="muted" id="count"></small>
+        </div>
+
+        <div class="entry-list" id="entryList"></div>
+      </aside>
+
+      <main class="panel panel-pad notebook">
+        <div class="row">
+          <div class="grow">
+            <div class="section-title">Date</div>
+            <input class="input" id="date" />
+          </div>
+          <div class="right-align">
+            <div class="section-title">Mood</div>
+            <select class="input" id="mood">
+  <option value="Calm">˚˖𓍢ִ໋❀ Calm</option>
+  <option value="Happy">(˶˃ ᵕ ˂˶) Happy</option>
+  <option value="Grateful">(..◜ᴗ◝..) Grateful</option>
+  <option value="Focused">ᝰ.ᐟ Focused</option>
+  <option value="Stressed">( ꩜ ᯅ ꩜;)⁭ ⁭ Stressed</option>
+  <option value="Sad">૮◞ ‸ ◟ ა Sad</option>
+</select>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <div class="section-title">Title</div>
+          <input class="input" id="title" placeholder="Today’s title…" />
+        </div>
+
+        <div class="mt-12">
+          <div class="section-title">Entry</div>
+          <textarea class="textarea" id="content" placeholder="Start writing…"></textarea>
+        </div>
+
+        <div class="mt-12 chip-row">
+          <span class="chip mood" id="moodChip">Mood: Calm</span>
+          <span class="chip" id="privacyChip">Private (local)</span>
+        </div>
+
+        <div class="row mt-14 wrap">
+          <div class="chip-row">
+            <button class="btn" id="btnSave">Save</button>
+            <button class="btn" id="btnDelete">Delete</button>
+          </div>
+          <small class="muted" id="status">Stored in your browser (localStorage).</small>
+        </div>
+      </main>
+
+      <section class="panel panel-pad right">
+        <div class="row">
+          <h3 class="prompt-title">Prompt</h3>
+          <button class="btn btn-accent" id="btnPrompt" type="button">New</button>
+        </div>
+        <div class="divider"></div>
+        <div class="chip prompt-card" id="promptCard">
+          What’s one small win you had today?
+        </div>
+
+        <div class="divider"></div>
+        <div class="section-title">Quick tips</div>
+        <div class="muted tips">
+          Try: 3 sentences (what happened, how you felt, what you learned).
+        </div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast"></div>
+<canvas id="sparkles" aria-hidden="true"></canvas>
+<div class="music">
+  <button class="btn" id="btnMusic" type="button">Play music</button>
+  <input id="musicVol" type="range" min="0" max="1" step="0.01" value="0.35" aria-label="Music volume">
+  <audio id="bgm" src="assets/FNAF%20lofi.mp3" loop preload="none"></audio>
+</div>
+<audio id="deleteSfx" src="assets/delete-joke.mp3" preload="auto"></audio>
+<audio id="saveSfx" src="assets/save-sfx.mp3" preload="auto"></audio>
+<script src="script.js"></script>
+  </body>
+</html>
